@@ -8,7 +8,7 @@ Game::Game() : m_Window(sf::VideoMode(WIDTH, HEIGHT), "Pac")
 
 void Game::run()
 {
-	while (m_Window.isOpen)
+	while (m_Window.isOpen())
 	{
 		processEvents();
 		update();
@@ -16,13 +16,15 @@ void Game::run()
 	}
 }
 
-void Game::addDrawObject(sf::Drawable* drawable)
+void Game::addDrawObject(std::shared_ptr<Entity> drawable)
 {
-
+	m_drawObjects.push_back(drawable);
 }
 
 void Game::update()
 {
+	for (auto object : m_drawObjects)
+		object->update();
 }
 
 void Game::render()
