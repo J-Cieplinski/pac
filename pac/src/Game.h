@@ -1,9 +1,8 @@
 #pragma once
 #include <SFML\Graphics.hpp>
-#include "Entity.h"
+#include "Headers.h"
 
-#define WIDTH 1280
-#define HEIGHT 720
+
 
 
 class Game

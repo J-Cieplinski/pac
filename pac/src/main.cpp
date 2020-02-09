@@ -10,7 +10,7 @@ int main()
 	/*player->setSize(sf::Vector2f(20, 20));
 	player->setPosition(WIDTH / 2 - 20, HEIGHT / 2 - 20);
 	player->setFillColor(sf::Color::Yellow);*/
-
+	player->setPosition(WIDTH / 2 - 20, HEIGHT / 2 - 20);
 
 
 	Game game;
