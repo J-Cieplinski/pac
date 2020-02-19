@@ -18,7 +18,6 @@ void Game::run()
 
 void Game::addDrawObject(std::shared_ptr<Entity> drawable, std::string key)
 {
-	//m_drawObjects.push_back(drawable);
 	m_drawObjects.insert(std::pair<std::string, std::shared_ptr<Entity>>(key, drawable));
 }
 

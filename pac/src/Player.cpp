@@ -4,8 +4,8 @@ Player::Player()
 {
 	m_Shape.setSize(sf::Vector2f(30.f, 30.f));
 	this->setPosition(WIDTH / 2 - 20, HEIGHT / 2 - 20);
-	m_View.setCenter(this->getPosition());
-	m_View.setSize(WIDTH, HEIGHT);
+	m_Camera.setCenter(this->getPosition());
+	m_Camera.setSize(WIDTH, HEIGHT);
 }
 
 void Player::move()
@@ -13,12 +13,12 @@ void Player::move()
 	if (sf::Keyboard::isKeyPressed(Keys::LEFT))
 	{
 		this->sf::Transformable::move(m_backwardsSpeed);
-		m_View.move(m_backwardsSpeed);
+		m_Camera.move(m_backwardsSpeed);
 	}
 	else if (sf::Keyboard::isKeyPressed(Keys::RIGHT))
 	{
 		this->sf::Transformable::move(m_forwardSpeed);
-		m_View.move(m_forwardSpeed);
+		m_Camera.move(m_forwardSpeed);
 	}
 }
 
@@ -29,7 +29,7 @@ void Player::update()
 
 const sf::View& Player::getView()
 {
-	return m_View;
+	return m_Camera;
 }
 
 void Player::draw(sf::RenderTarget& target, sf::RenderStates states) const

@@ -11,7 +11,7 @@ public:
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 private:
 	sf::RectangleShape m_Shape;
-	sf::View m_View;
+	sf::View m_Camera;
 	sf::Vector2f m_forwardSpeed{ 2.f, 0.f };
 	sf::Vector2f m_backwardsSpeed{ -2.f, 0.f };
 	void move();
