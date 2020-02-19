@@ -16,22 +16,28 @@ void Game::run()
 	}
 }
 
-void Game::addDrawObject(std::shared_ptr<Entity> drawable)
+void Game::addDrawObject(std::shared_ptr<Entity> drawable, std::string key)
 {
-	m_drawObjects.push_back(drawable);
+	//m_drawObjects.push_back(drawable);
+	m_drawObjects.insert(std::pair<std::string, std::shared_ptr<Entity>>(key, drawable));
 }
 
 void Game::update()
 {
 	for (auto object : m_drawObjects)
-		object->update();
+		object.second->update();
 }
 
 void Game::render()
 {
-	for(auto drawable: m_drawObjects)
-		m_Window.draw(*drawable);
+	m_Window.clear();
+	for (auto drawable : m_drawObjects)
+	{
+		if(PLAYER == drawable.first)
+			m_Window.setView((std::dynamic_pointer_cast<Player>(drawable.second))->getView());
 
+		m_Window.draw(*drawable.second);
+	}
 	m_Window.display();
 }
 
