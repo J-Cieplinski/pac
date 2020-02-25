@@ -2,7 +2,7 @@
 #include "Headers.h"
 
 class Player :
-	public Entity, public sf::Transformable
+	public Entity
 {
 public:
 	Player();

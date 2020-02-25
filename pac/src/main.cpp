@@ -2,7 +2,8 @@
 #include "Game.h"
 #include "Entity.h"
 
-class TestObject : public Entity, public sf::Transformable {
+class TestObject : 
+	public Entity {
 private:
 	sf::RectangleShape m_Shape;
 public:
@@ -22,12 +23,15 @@ int main()
 {
 	std::shared_ptr<Player> player = std::make_shared<Player>(Player());
 	std::shared_ptr<TestObject> test = std::make_shared<TestObject>(TestObject());
+	std::shared_ptr<LevelMap> levelMap = std::make_shared<LevelMap>(LevelMap());
 
+	levelMap->load("map.txt", 16, 8);
 
 	Game game;
 
 	game.addDrawObject(player, PLAYER);
 	game.addDrawObject(test, "test");
+	game.addDrawObject(levelMap, "levelMap");
 
 	game.run();
 	

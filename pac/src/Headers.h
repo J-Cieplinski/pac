@@ -7,3 +7,7 @@
 
 #include "Entity.h"
 #include "Player.h"
+#include "LevelMap.h"
+
+
+#include <iostream>
