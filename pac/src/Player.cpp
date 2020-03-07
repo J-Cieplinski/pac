@@ -3,7 +3,7 @@
 Player::Player()
 {
 	m_Shape.setSize(sf::Vector2f(30.f, 30.f));
-	this->setPosition(WIDTH / 2 - 20, HEIGHT / 2 - 20);
+	this->setPosition(WIDTH / 2, HEIGHT / 2);
 	m_Camera.setCenter(this->getPosition());
 	m_Camera.setSize(WIDTH, HEIGHT);
 }
